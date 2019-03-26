@@ -119,7 +119,6 @@ RCT_EXPORT_METHOD(setObserver:(NSDictionary *)input)
     [self fitness_setObserver:input];
 }
 
-
 RCT_EXPORT_METHOD(getDailyStepCountSamples:(NSDictionary *)input callback:(RCTResponseSenderBlock)callback)
 {
     [self fitness_getDailyStepSamples:input callback:callback];
@@ -215,9 +214,19 @@ RCT_EXPORT_METHOD(getInfo:(NSDictionary *)input callback:(RCTResponseSenderBlock
     [self getModuleInfo:input callback:callback];
 }
 
+RCT_EXPORT_METHOD(canWriteMindfulSession:(RCTResponseSenderBlock)callback)
+{
+    [self mindfulness_canWriteMindfulSession:callback:callback];
+}
+
 RCT_EXPORT_METHOD(saveMindfulSession:(NSDictionary *)input callback:(RCTResponseSenderBlock)callback)
 {
     [self mindfulness_saveMindfulSession:input callback:callback];
+}
+
+RCT_EXPORT_METHOD(deleteAllMindfulSessions:(RCTResponseSenderBlock)callback)
+{
+    [self mindfulness_deleteAllMindfulSessions:(RCTResponseSenderBlock)callback];
 }
 
 
